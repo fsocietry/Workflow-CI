@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/Workflow-CI/Workflow-CI/mlruns/625969888718483330/bd4d6515747b4512ab59416a867b7ec5/artifacts
+end_time: 1778512546805
+entry_point_name: ''
+experiment_id: '625969888718483330'
+lifecycle_stage: active
+run_id: bd4d6515747b4512ab59416a867b7ec5
+run_name: amazing-cub-712
+run_uuid: bd4d6515747b4512ab59416a867b7ec5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778512537579
+status: 3
+tags: []
+user_id: runner
