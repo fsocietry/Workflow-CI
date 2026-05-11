@@ -69,14 +69,16 @@ jobs:
       - name: Get latest run ID
         id: get_run_id
         run: |
-          RUN_ID=$(ls mlruns/0/ | grep -v meta.yaml | head -1)
-          echo "run_id=$RUN_ID" >> $GITHUB_OUTPUT
-          echo "Model path: mlruns/0/$RUN_ID/artifacts/model"
+          EXP_ID=$(ls mlruns/ | grep -v '\.trash' | grep -v 'models' | head -1)
+          RUN_ID=$(ls mlruns/$EXP_ID/ | grep -v meta.yaml | head -1)
+          MODEL_URI="mlruns/$EXP_ID/$RUN_ID/artifacts/model"
+          echo "model_uri=$MODEL_URI" >> $GITHUB_OUTPUT
+          echo "Model URI: $MODEL_URI"
 
       - name: Build Docker image with MLflow
         run: |
           mlflow models build-docker \
-            --model-uri "mlruns/0/${{ steps.get_run_id.outputs.run_id }}/artifacts/model" \
+            --model-uri "${{ steps.get_run_id.outputs.model_uri }}" \
             --name iris-model
 
       - name: Log in to Docker Hub
