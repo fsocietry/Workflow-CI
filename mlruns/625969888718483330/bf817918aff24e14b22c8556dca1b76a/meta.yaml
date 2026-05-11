@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/Workflow-CI/Workflow-CI/mlruns/625969888718483330/bf817918aff24e14b22c8556dca1b76a/artifacts
+end_time: 1778512744858
+entry_point_name: ''
+experiment_id: '625969888718483330'
+lifecycle_stage: active
+run_id: bf817918aff24e14b22c8556dca1b76a
+run_name: capricious-quail-10
+run_uuid: bf817918aff24e14b22c8556dca1b76a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778512736804
+status: 3
+tags: []
+user_id: runner
