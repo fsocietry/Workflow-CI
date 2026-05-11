@@ -1,0 +1,5 @@
+Tautan Docker Hub:
+https://hub.docker.com/r/<DOCKER_USERNAME>/iris-model
+
+Catatan: Ganti <DOCKER_USERNAME> dengan username Docker Hub Anda.
+Image akan dibuat dan di-push secara otomatis melalui GitHub Actions workflow.
