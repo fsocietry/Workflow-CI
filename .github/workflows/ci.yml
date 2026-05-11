@@ -66,12 +66,17 @@ jobs:
       - name: Install MLflow
         run: pip install mlflow==2.19.0
 
-      - name: Get latest run ID
+      - name: Get model URI
         id: get_run_id
         run: |
-          EXP_ID=$(ls mlruns/ | grep -v '\.trash' | grep -v 'models' | head -1)
-          RUN_ID=$(ls mlruns/$EXP_ID/ | grep -v meta.yaml | head -1)
-          MODEL_URI="mlruns/$EXP_ID/$RUN_ID/artifacts/model"
+          MODEL_URI=$(python3 -c "
+import mlflow, os
+client = mlflow.tracking.MlflowClient(tracking_uri='mlruns')
+exp = client.get_experiment_by_name('iris_classification_ci')
+runs = client.search_runs([exp.experiment_id], order_by=['start_time DESC'])
+r = runs[0]
+print(f'mlruns/{exp.experiment_id}/{r.info.run_id}/artifacts/model')
+")
           echo "model_uri=$MODEL_URI" >> $GITHUB_OUTPUT
           echo "Model URI: $MODEL_URI"
 
