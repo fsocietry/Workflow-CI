@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/Workflow-CI/Workflow-CI/mlruns/625969888718483330/08e52ed5394d49ae9a3a0296d7b72e34/artifacts
+end_time: 1778513580722
+entry_point_name: ''
+experiment_id: '625969888718483330'
+lifecycle_stage: active
+run_id: 08e52ed5394d49ae9a3a0296d7b72e34
+run_name: delightful-lark-287
+run_uuid: 08e52ed5394d49ae9a3a0296d7b72e34
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778513572373
+status: 3
+tags: []
+user_id: runner
