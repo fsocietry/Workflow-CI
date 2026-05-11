@@ -69,14 +69,7 @@ jobs:
       - name: Get model URI
         id: get_run_id
         run: |
-          MODEL_URI=$(python3 -c "
-import mlflow, os
-client = mlflow.tracking.MlflowClient(tracking_uri='mlruns')
-exp = client.get_experiment_by_name('iris_classification_ci')
-runs = client.search_runs([exp.experiment_id], order_by=['start_time DESC'])
-r = runs[0]
-print(f'mlruns/{exp.experiment_id}/{r.info.run_id}/artifacts/model')
-")
+          MODEL_URI=$(python3 get_model_uri.py)
           echo "model_uri=$MODEL_URI" >> $GITHUB_OUTPUT
           echo "Model URI: $MODEL_URI"
 
