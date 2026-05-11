@@ -53,9 +53,7 @@ def main():
         X, y, test_size=0.2, random_state=42, stratify=y
     )
 
-    mlflow.set_experiment('iris_classification_ci')
-
-    with mlflow.start_run(run_name='random_forest_ci'):
+    with mlflow.start_run():
         model = RandomForestClassifier(
             n_estimators=100,
             max_depth=10,
